@@ -11,5 +11,11 @@ public class ModelTest {
     public void setup() {
         Model.crearCoche("1234ABC", "Model S", 120);
     }
-
+    @Test
+    public void getCoche_returnsCorrectCoche() {
+        Coche coche = Model.getCoche("1234ABC");
+        assertEquals("1234ABC", coche.getMatricula());
+        assertEquals("Model S", coche.getModelo());
+        assertEquals(120, coche.getVelocidad());
+    }
 }
