@@ -1,8 +1,10 @@
-package cod.mvc;
+package cod.mvc.model;
+
+import cod.mvc.controller.Observer;
 
 import java.util.ArrayList;
 
-public class Model {
+public class Model implements Observable {
     private static ArrayList<Coche> parking = new ArrayList<>();
 
     public static void crearCoche(String matricula, String modelo, int velocidad) {
@@ -31,5 +33,20 @@ public class Model {
             return coche.getVelocidad();
         }
         return -1;
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+
+    }
+
+    @Override
+    public void notifyObservers(Coche coche) {
+
     }
 }
