@@ -23,4 +23,8 @@ public class Controller {
     public void crearCoche(String nombre, String matricula){
         miModel.crearCoche(nombre, matricula);
     }
+
+    public void cambiarVelocidad(String matricula, Integer velocidad){
+        miModel.cambiarVelocidad(matricula, velocidad);
+    }
 }
