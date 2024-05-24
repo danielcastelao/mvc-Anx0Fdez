@@ -20,5 +20,7 @@ public class Controller {
         miModel.addObserver(observoLimite);
     }
 
-
+    public void crearCoche(String nombre, String matricula){
+        miModel.crearCoche(nombre, matricula);
+    }
 }
