@@ -20,10 +20,12 @@ public class Model implements Observable {
         }
         return null;
     }
+
     public static void cambiarVelocidad(String matricula, int velocidad) {
         Coche coche = getCoche(matricula);
         if (coche != null) {
             coche.setVelocidad(velocidad);
+            notifyObservers(coche);
         }
     }
 
@@ -37,16 +39,17 @@ public class Model implements Observable {
 
     @Override
     public void addObserver(Observer observer) {
-
+        observers.add(observer);
     }
 
     @Override
     public void removeObserver(Observer observer) {
-
+        observers.remove(observer);
     }
 
-    @Override
-    public void notifyObservers(Coche coche) {
-
+    public static void notifyObservers(Coche coche) {
+        for (Observer observer : observers) {
+            observer.update(coche);
+        }
     }
 }

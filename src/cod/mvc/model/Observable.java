@@ -10,5 +10,8 @@ public interface Observable {
 
     void addObserver(Observer observer);
     void removeObserver(Observer observer);
-    void notifyObservers(Coche coche);
+
+    static void notifyObservers(Coche coche) {
+
+    }
 }
