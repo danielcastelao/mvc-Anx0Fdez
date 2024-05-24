@@ -4,12 +4,8 @@ import cod.mvc.model.Coche;
 import cod.mvc.model.Model;
 import cod.mvc.view.View;
 
-public class Controller implements Observer {
+public class Controller {
 
-    private ObsVelocidad observaVelocidad;
+    private final Model miModel;
 
-    @Override
-    public void update(Coche coche) {
-
-    }
 }
