@@ -1,7 +1,7 @@
-package com.cod.mvc;
+package cod.mvc;
 
-import com.cod.mvc.controller.Controller;
-import com.cod.mvc.model.Model;
+import cod.mvc.controller.Controller;
+import cod.mvc.model.Model;
 
 /**
  * Clase principal
