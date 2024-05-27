@@ -1,17 +1,17 @@
 package cod.mvc.model;
 
 import cod.mvc.controller.Observer;
+import cod.mvc.model.Coche;
 
-import java.util.ArrayList;
-
+/**
+ * Interfaz Observable
+ */
 public interface Observable {
-
-    ArrayList<Observer> observers = new ArrayList<>();
-
+    // añade un observador
     void addObserver(Observer observer);
+    // elimina un observador
     void removeObserver(Observer observer);
-
-    static void notifyObservers(Coche coche) {
-
-    }
+    // notifica a los observadores
+    void notifyObservers(Coche coche);
 }
+
