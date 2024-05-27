@@ -1,8 +1,8 @@
 package cod.mvc.view;
 
 public class View {
-    public static void muestraVelocidad(String matricula, int velocidad) {
-        System.out.println("El coche con matrícula " + matricula + " tiene una velocidad de " + velocidad + " km/h.");
-
+    public static boolean muestraVelocidad(String matricula, Integer v){
+        System.out.println("[View] " + matricula + ": " + v + "km/hr");
+        return true;
     }
 }
