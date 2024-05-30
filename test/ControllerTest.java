@@ -37,6 +37,25 @@ public class ControllerTest {
         assertEquals(50, coche.velocidad);
     }
 
+    // test cambiar velocidad y supera el limite de 120
+    @Test
+    public void changesCarSpeedAndExceedsLimit() {
+
+        // Redirigir la salida estándar
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        controller.crearCoche("TestCocheRapido", "BX5555");
+        controller.cambiarVelocidad("BX5555", 150);
+        Coche coche = model.getCoche("BX5555");
+        assertEquals(150, coche.velocidad);
+
+        // Comprobar la salida
+        String salidaEsperada = "[ObserverVelocidad] Se ha cambiado la velocidad: 150km/hr\n" +
+                "[View] BX5555: 150km/hr\n" + "[ObserverLimite] INFRACCION\n";
+        assertEquals(salidaEsperada, outContent.toString());
+
+    }
 
     /*@Test
     public void doesNotChangeSpeedOfNonExistentCar() {
