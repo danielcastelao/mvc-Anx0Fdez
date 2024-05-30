@@ -57,19 +57,4 @@ public class ControllerTest {
 
     }
 
-    /*@Test
-    public void doesNotChangeSpeedOfNonExistentCar() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            controller.cambiarVelocidad("1234", 50);
-        });
-    }
-
-    @Test
-    public void doesNotCreateCarWithDuplicateMatricula() {
-        controller.crearCoche("TestCar", "1234");
-        assertThrows(IllegalArgumentException.class, () -> {
-            controller.crearCoche("AnotherCar", "1234");
-        });
-    }
-    */
 }
