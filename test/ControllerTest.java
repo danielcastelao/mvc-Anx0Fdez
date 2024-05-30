@@ -29,9 +29,14 @@ public class ControllerTest {
         assertEquals("1234", coche.matricula);
     }
 
-
-
+    @Test
+    public void changesCarSpeed() {
+        controller.crearCoche("TestCar", "1234");
+        controller.cambiarVelocidad("1234", 50);
+        Coche coche = model.getCoche("1234");
+        assertEquals(50, coche.velocidad);
     }
+
 
     /*@Test
     public void doesNotChangeSpeedOfNonExistentCar() {
