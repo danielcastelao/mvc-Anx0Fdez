@@ -10,4 +10,8 @@ public class Controller {
         this.model = model;
     }
 
+    public Coche buscarCoche(String matricula) {
+        return model.getCoche(matricula);
+    }
+
 }
