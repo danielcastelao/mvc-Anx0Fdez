@@ -14,4 +14,9 @@ public class Controller {
         return model.getCoche(matricula);
     }
 
+    public Coche crearCoche(String modelo, String matricula) {
+        return model.crearCoche(modelo, matricula);
+    }
+
+
 }
