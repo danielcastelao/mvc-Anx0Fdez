@@ -13,5 +13,13 @@ public class View {
     public static void mostrarCoche(Coche coche) {
         System.out.println("[View] Modelo: " + coche.modelo + ", Matricula: " + coche.matricula + ", Velocidad: " + coche.velocidad + "km/hr");
     }
+    public static String[] solicitarDatosCoche() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce el modelo del coche:");
+        String modelo = scanner.nextLine();
+        System.out.println("Introduce la matrícula del coche:");
+        String matricula = scanner.nextLine();
+        return new String[]{modelo, matricula};
+    }
 
 }
