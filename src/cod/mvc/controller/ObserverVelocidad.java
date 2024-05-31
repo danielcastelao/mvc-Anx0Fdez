@@ -17,12 +17,5 @@ public class ObserverVelocidad implements Observer {
         // le comunicamos a la vista que muestre la velocidad
         View.muestraVelocidad(arg.matricula, arg.velocidad);
 
-        // tambien tenemos acceso al observable en este método,
-        // es decir el com.cod.mvc.model.Model
-        // por lo tanto tenemos acceso a 'parking'
-        /*for (Coche coche : ((com.cod.mvc.model.Model) o).parking) {
-            System.out.println(coche.matricula);
-        }*/
-
     }
 }
