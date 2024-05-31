@@ -22,6 +22,14 @@ public class Model implements Observable {
     // Constructor privado
     private Model() {}
 
+    // Método para obtener la única instancia de la clase Model
+    public static Model getInstance() {
+        if (instance == null) {
+            instance = new Model();
+        }
+        return instance;
+    }
+
     @Override
     public void addObserver(Observer observer) {
         observers.add(observer);
