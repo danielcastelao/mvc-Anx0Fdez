@@ -19,6 +19,9 @@ public class Model implements Observable {
     // La única instancia de la clase Model
     private static Model instance = null;
 
+    // Constructor privado
+    private Model() {}
+
     @Override
     public void addObserver(Observer observer) {
         observers.add(observer);
