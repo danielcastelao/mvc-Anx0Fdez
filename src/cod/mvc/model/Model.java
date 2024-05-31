@@ -16,6 +16,9 @@ public class Model implements Observable {
     // para los observadores
     private static final ArrayList<Observer> observers = new ArrayList<Observer>();
 
+    // La única instancia de la clase Model
+    private static Model instance = null;
+
     @Override
     public void addObserver(Observer observer) {
         observers.add(observer);
