@@ -18,5 +18,7 @@ public class Controller {
         return model.crearCoche(modelo, matricula);
     }
 
-
+    public void cambiarVelocidad(String matricula, Integer v) {
+        model.cambiarVelocidad(matricula, v);
+    }
 }
