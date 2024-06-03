@@ -1,8 +1,9 @@
 # Tarea: arquitectura MVC
 
-Tarea para implementar arquitectura MVC
+EXAMEN FINAL 3º TRIMESTRE
+Arquitectura MVC
 
-Utiliza objetos coches, modifica la velocidad y la muestra
+`Aqui estan el diagrama de clases y el diagrama de secuencia del programa.`
 
 ---
 
