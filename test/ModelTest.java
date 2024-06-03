@@ -31,5 +31,30 @@ public class ModelTest {
         assertEquals("ABC123", existingCoche.matricula);
     }
 
+    @Test
+    public void getCoche_returnsNullForNonExistingCar() {
+        Coche nonExistingCoche = Model.getCoche("XYZ789");
+        assertNull(nonExistingCoche);
+    }
 
+    @Test
+    public void cambiarVelocidad_increasesSpeed() {
+        Integer newSpeed = Model.cambiarVelocidad("ABC123", 50, model);
+        assertNotNull(newSpeed);
+        assertEquals(50, newSpeed);
+    }
+
+    @Test
+    public void cambiarVelocidad_decreasesSpeed() {
+        Model.cambiarVelocidad("ABC123", 50, model);
+        Integer newSpeed = Model.cambiarVelocidad("ABC123", 30, model);
+        assertNotNull(newSpeed);
+        assertEquals(30, newSpeed);
+    }
+
+    @Test
+    public void cambiarVelocidad_returnsNullForNonExistingCar() {
+        Integer newSpeed = Model.cambiarVelocidad("XYZ789", 50, model);
+        assertNull(newSpeed);
+    }
 }
