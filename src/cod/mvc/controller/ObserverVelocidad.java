@@ -3,26 +3,22 @@ package cod.mvc.controller;
 import cod.mvc.model.Coche;
 import cod.mvc.view.View;
 
+/**
+ * Clase ObserverVelocidad que implementa la interfaz Observer.
+ * Esta clase se encarga de observar los cambios en la velocidad de un coche.
+ */
 public class ObserverVelocidad implements Observer {
     /**
-     * Este método es llamado siempre que hay un cambio
-     * El observable cuando hace el notifyObservers
-     * 'dispara' todos los update de los Observers
+     * Este método es llamado siempre que hay un cambio en la velocidad del coche.
+     * El observable cuando hace el notifyObservers 'dispara' todos los update de los Observers.
      *
      * @param arg el argumento pasado por el observable, el coche actualizado
      */
     @Override
     public void update(Coche arg) {
+        // Imprime un mensaje con la nueva velocidad del coche
         System.out.println("[ObserverVelocidad] Se ha cambiado la velocidad: " + arg.velocidad.toString() + "km/hr");
-        // le comunicamos a la vista que muestre la velocidad
+        // Le comunica a la vista que muestre la nueva velocidad del coche
         View.muestraVelocidad(arg.matricula, arg.velocidad);
-
-        // tambien tenemos acceso al observable en este método,
-        // es decir el com.cod.mvc.model.Model
-        // por lo tanto tenemos acceso a 'parking'
-        /*for (Coche coche : ((com.cod.mvc.model.Model) o).parking) {
-            System.out.println(coche.matricula);
-        }*/
-
     }
 }

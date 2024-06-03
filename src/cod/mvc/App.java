@@ -1,32 +1,36 @@
 package cod.mvc;
 
 import cod.mvc.controller.Controller;
+import cod.mvc.model.Coche;
 import cod.mvc.model.Model;
+import cod.mvc.view.View;
 
 /**
- * Clase principal
+ * La clase principal de la aplicación.
  */
 public class App {
-
+    /**
+     * El método principal de la aplicación.
+     * @param args Los argumentos de la línea de comandos.
+     */
     public static void main(String[] args) {
-        // Inicializamos la app
-        // instanciamos el modelo
-        Model miModel = new Model();
-        // instanciamos el controlador
-        // le pasamos el Model instanciado
+        // Obtiene la única instancia de la clase Model
+        Model miModel = Model.getInstance();
+
+        // Crea un nuevo Controller, pasando la instancia del modelo a él
         Controller miController = new Controller(miModel);
 
-        // Crear tres coches
-        miController.crearCoche("LaFerrari", "SBC 1234");
-        miController.crearCoche("Alpine", "HYU 4567");
-        miController.crearCoche("Aston Martin", "FGH 3333");
+        // Llama al método de la View para solicitar los datos del coche al usuario
+        String[] datosCoche = View.solicitarDatosCoche();
 
-        // Cambiar la velocidad de un coche
-        miController.cambiarVelocidad("SBC 1234", 30);
+        // Usa el Controller para crear un nuevo coche con los datos proporcionados por el usuario
+        miController.crearCoche(datosCoche[0], datosCoche[1]);
 
-        // otro cambio de velocidad
-        // sobrepasando la velocidad máxima
-        miController.cambiarVelocidad("HYU 4567", 150);
+        // Usa el Controller para buscar el coche usando la matrícula proporcionada
+        Coche coche = miController.buscarCoche(datosCoche[1]);
+
+        // Usa la View para mostrar los datos del coche
+        View.mostrarCoche(coche);
 
     }
 }
