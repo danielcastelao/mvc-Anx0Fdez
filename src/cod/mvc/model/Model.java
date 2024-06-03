@@ -64,6 +64,15 @@ public class Model implements Observable {
         return null;
     }
 
+    public static Integer subirVelocidad(String matricula, int v, Model model) {
+        Coche c = getCoche(matricula);
+        if (c != null) {
+            c.velocidad += v;
+            model.notifyObservers(getCoche(matricula));
+            return c.velocidad;
+        }
+        return null;
+    }
 
 
     public Integer getVelocidad(String matricula) {
