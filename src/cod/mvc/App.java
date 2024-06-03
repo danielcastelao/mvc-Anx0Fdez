@@ -31,5 +31,6 @@ public class App {
 
         // Usa la View para mostrar los datos del coche
         View.mostrarCoche(coche);
+
     }
 }
