@@ -23,4 +23,13 @@ public class ModelTest {
         assertEquals("DEF456", newCoche.matricula);
     }
 
+    @Test
+    public void getCoche_returnsExistingCar() {
+        Coche existingCoche = Model.getCoche("ABC123");
+        assertNotNull(existingCoche);
+        assertEquals("Modelo1", existingCoche.modelo);
+        assertEquals("ABC123", existingCoche.matricula);
+    }
+
+
 }
