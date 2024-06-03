@@ -6,14 +6,6 @@ Utiliza objetos coches, modifica la velocidad y la muestra
 
 ---
 
-## Clases ```Controller``` y ```Model```
-
-- Implementa la clase ```Controller``` y ```Model``` según el diagrama de clases.
-
-- Implementa los métodos ```crearCoche()```, ```getCoche()```, ```cambiarVelocidad()``` y ```getVelocidad()```
-
-- Realiza los test necesarios para comprobar que funcionan correctamente
-
 ### Diagrama de clases:
 
 ```mermaid
@@ -23,21 +15,31 @@ classDiagram
         String: modelo
         Integer: velocidad
     }
-      class Controller{
-          +main()
-      }
-      class View {+muestraVelocidad(String, Integer)}
-      class Model {
-          ArrayList~Coche~: parking
-          +crearCoche(String, String, String)
-          +getCoche(String)
-          +cambiarVelocidad(String, Integer)
-          +getVelocidad(String)
-      }
+    class Observer {
+        +update(Coche)
+    }
+    class Model {
+        ArrayList~Coche~: parking
+        ArrayList~Observer~: observers
+        +crearCoche(String, String): Coche
+        +getCoche(String): Coche
+        +cambiarVelocidad(String, Integer, Model): Integer
+        +getVelocidad(String): Integer
+        +removeObserver(Observer)
+        +notifyObservers(Coche)
+        +subirVelocidad(String, Integer, Model): Integer
+        +bajarVelocidad(String, Integer, Model): Integer
+    }
+    class Controller{
+        +main()
+    }
+    class View {
+        +muestraVelocidad(String, Integer)
+    }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
-      
+    Model "1" *-- "1..n" Observer : association
 ```
 
 ---
