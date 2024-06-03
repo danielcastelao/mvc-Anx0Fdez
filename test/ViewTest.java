@@ -23,4 +23,13 @@ public void mostrarCoche_ShouldPrintCorrectly() {
     assertEquals("[View] Modelo: ModeloTest, Matricula: ABC123, Velocidad: 120km/hr", outContent.toString().trim());
 }
 
+    @Test
+    public void solicitarDatosCoche_ShouldReturnCorrectly() {
+        String input = "ModeloTest\nABC123\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        String[] result = View.solicitarDatosCoche();
+        assertEquals("ModeloTest", result[0]);
+        assertEquals("ABC123", result[1]);
+    }
 }
